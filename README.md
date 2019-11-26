@@ -11,7 +11,7 @@ Scripts I use to manipulate data for my machine learning (mainly computer vision
     - **rearrange_data**
 
  
- ## numpy_image_preprocessing
+ # numpy_image_preprocessing
  File which contains functions designed to split the images in numpy arrays which are easy to adapt to our ML problem.
  
  The functions present in this file are: 
@@ -48,24 +48,17 @@ Scripts I use to manipulate data for my machine learning (mainly computer vision
    - **class_weight_dict:** A dict which shall be fed as an argument to the **keras.fit()** method to tell it to pay more attention to certain classes whcich as underrepresented in our dataset.
     
     
-  ##image_data_generator_splitting
- File which contains one function designed to split and rearrange the images' directory in order for it to be in the right structure to be fed to keras' **ImageDataGenerator**.
  
- 
- ### rearrange_data
- Responsible for rearranging and image directory to follow the ImageDataGenerator structure.
-  
-  Arguments:
-   - **original_data_path:** Directory from where to read the images.
-   - **dir_to_save:** Directory where to create the new structure and store the images 
-   - **class_size_limit=None(Optional):** Number of images to read from each class. If not defined, will read all images from all classes.
-   - **data_split = 0.9(Optional):** Fraction of images to store in the data array. If not defined, will default to 90%.
+
+ #image_data_generator_splitting
+    File which contains one function designed to split and rearrange the images' directory in order for it to be in the right structure to be fed to keras' **ImageDataGenerator**.
 
 The mentioned structure follows the template for N Classes:
 
 >**Dir_to_save**
 >>**train/**
 >>>.../class1
+>>>
 >>>
 >>>.../class2
 >>>
@@ -85,3 +78,14 @@ The mentioned structure follows the template for N Classes:
 The following image further illustrates the structure for a binary classification problem:
 
 ![directory structure](ReadMe_Images/imageDataGeneratorStructure.jpeg)
+
+
+ ### rearrange_data
+ 
+   Responsible for rearranging and image directory to follow the ImageDataGenerator structure.
+  
+  Arguments:
+   - **original_data_path:** Directory from where to read the images.
+   - **dir_to_save:** Directory where to create the new structure and store the images 
+   - **class_size_limit=None(Optional):** Number of images to read from each class. If not defined, will read all images from all classes.
+   - **data_split = 0.9(Optional):** Fraction of images to store in the data array. If not defined, will default to 90%.
