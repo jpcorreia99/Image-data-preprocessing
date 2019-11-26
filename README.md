@@ -5,7 +5,7 @@ Scripts I use to manipulate data for my machine learning (mainly computer vision
 # Files
  - **[numpy_image_preprocessing](#numpy_image_preprocessing)**
     - **[process_images_npy](#process_images_npy)**
-    - **[open_npy_data](#open_npy_data)**
+    - **[load_npy_data](#load_npy_data)**
     - **[compute_class_weight](#compute_class_weight)**
 
  - **[image_data_generator_splitting](#image_data_generator_splitting)**
