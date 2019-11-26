@@ -1,14 +1,15 @@
 # Image preprocessing scripts
 Scripts I use to manipulate data for my machine learning (mainly computer vision) problems.
 **Pillow** and **SKLearn** are required dependencies.
-# Files
- - **numpy_image_preprocessing**
-    - **pricess_images_npy**
-    - **open_npy_data**
-    - **compute_class_weight**
 
- - **image_data_generator_splitting**
-    - **rearrange_data**
+# Files
+ - **[numpy_image_preprocessing](#numpy_image_preprocessing)**
+    - **[process_images_npy](#process_images_npy)**
+    - **[open_npy_data](#open_npy_data)**
+    - **[compute_class_weight](#compute_class_weight)**
+
+ - **[image_data_generator_splitting](#image_data_generator_splitting)**
+    - **[rearrange_data](#rearrange_data)**
 
  
  # numpy_image_preprocessing
@@ -19,7 +20,7 @@ Scripts I use to manipulate data for my machine learning (mainly computer vision
    - **open_npy_data**
    - **compute_class_weight**
    
-   ### process_images_npy
+   ### *process_images_npy*
     Reads the images and splits them in arrays.
   Arguments :
    - **original_data_path:** Directory from where to read the images.
@@ -29,7 +30,7 @@ Scripts I use to manipulate data for my machine learning (mainly computer vision
    - **data_split = 0.9(Optional):** Fraction of images to store in the data array. If not defined, will default to 90%.
    - **grayscale = False:** Either to read images as RGB (3 channels) or grayscale (0 channels). If not define will default to RGB.
    
-   ### load_npy_data
+   ### *load_npy_data*
     Loads the .npy files stores by process_images_npy
     
    Arguments:
@@ -38,7 +39,7 @@ Scripts I use to manipulate data for my machine learning (mainly computer vision
    Returns: 
    - **train_data, train_labels, test_data, test_labels:** 4 arrays where our data is stored according to the array's name.
     
-   ###  compute_class_weights
+   ###  *compute_class_weight*
     Wrapper for SKLearn's compute_class_weight which only needs the train labels. Used to balance the training for unbalanced datasets.
    Arguments:
     
@@ -50,8 +51,9 @@ Scripts I use to manipulate data for my machine learning (mainly computer vision
     
  
 
- #image_data_generator_splitting
-    File which contains one function designed to split and rearrange the images' directory in order for it to be in the right structure to be fed to keras' **ImageDataGenerator**.
+ # image_data_generator_splitting
+ 
+File which contains one function designed to split and rearrange the images' directory in order for it to be in the right structure to be fed to keras' **ImageDataGenerator**.
 
 The mentioned structure follows the template for N Classes:
 
@@ -80,10 +82,8 @@ The following image further illustrates the structure for a binary classificatio
 ![directory structure](ReadMe_Images/imageDataGeneratorStructure.jpeg)
 
 
- ### rearrange_data
- 
-   Responsible for rearranging and image directory to follow the ImageDataGenerator structure.
-  
+ ### *rearrange_data*
+     Responsible for rearranging and image directory to follow the ImageDataGenerator structure.
   Arguments:
    - **original_data_path:** Directory from where to read the images.
    - **dir_to_save:** Directory where to create the new structure and store the images 
